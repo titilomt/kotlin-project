@@ -1,4 +1,4 @@
-package com.example.curso01.exemplo
+package com.example.curso01.exemplo.service
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,10 +22,9 @@ class RetrofitInitializer {
 
     }
 
-
     private val retrofit = Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("http://apiteste.fourtime.com/api/")
+        .baseUrl("http://api.fluo.site /")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

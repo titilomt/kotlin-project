@@ -1,9 +1,10 @@
-package com.example.curso01.exemplo
+package com.example.curso01.exemplo.ui.Activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.curso01.exemplo.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

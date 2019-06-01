@@ -1,4 +1,4 @@
-package com.example.curso01.exemplo
+package com.example.curso01.exemplo.model
 
 data class Team (
     var estado: String,

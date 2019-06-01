@@ -1,8 +1,11 @@
-package com.example.curso01.exemplo
+package com.example.curso01.exemplo.ui.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.curso01.exemplo.R
+import com.example.curso01.exemplo.model.ListTeam
+import com.example.curso01.exemplo.service.RetrofitInitializer
 import kotlinx.android.synthetic.main.activity_list.*
 import retrofit2.Call
 import retrofit2.Response
@@ -32,7 +35,10 @@ class ListActivity : AppCompatActivity() {
                 response.let {
                     if (it!!.code() == 200) {
 
-                        list.adapter = ListAdapter(this@ListActivity, it.body().lista)
+                        list.adapter = ListAdapter(
+                            this@ListActivity,
+                            it.body().lista
+                        )
                     } else {
                         Toast.makeText(this@ListActivity, "Deu pau", Toast.LENGTH_LONG).show()
                     }

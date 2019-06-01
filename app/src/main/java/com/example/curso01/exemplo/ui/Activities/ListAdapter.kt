@@ -1,4 +1,4 @@
-package com.example.curso01.exemplo
+package com.example.curso01.exemplo.ui.Activities
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.curso01.exemplo.R
+import com.example.curso01.exemplo.model.Team
 
 class ListAdapter(var context: Context, var list: List<Team>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {

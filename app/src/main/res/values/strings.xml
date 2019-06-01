@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Exemplo</string>
-    <string name="submitBtn">Butão</string>
+    <string name="submitBtn">Login</string>
     <string name="labelSenha">Senha</string>
     <string name="labelLogin">Email</string>
+    <string name="registerBtn">Cadastrar</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>

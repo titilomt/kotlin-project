@@ -5,13 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.Activities.MainActivity">
 
     <RelativeLayout android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
     >
+
         <RelativeLayout
                 android:id="@+id/loginContainer"
                 android:orientation="horizontal"
@@ -47,6 +48,7 @@
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:id="@+id/inputSenha"
                     android:layout_below="@+id/labelSenha"
                     android:inputType="textPassword"
@@ -60,6 +62,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/submitBtn"
+        />
+        <Button
+                android:id="@+id/buttonRegister"
+                android:layout_below="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registerBtn"
         />
     </RelativeLayout>
 
