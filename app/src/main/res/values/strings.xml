@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Exemplo</string>
+    <string name="app_name">Meme Master</string>
     <string name="submitBtn">Butão</string>
     <string name="labelSenha">Senha</string>
     <string name="labelLogin">Email</string>
