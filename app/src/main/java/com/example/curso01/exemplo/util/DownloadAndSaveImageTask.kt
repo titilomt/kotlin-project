@@ -31,8 +31,12 @@ class DownloadAndSaveImageTask(context: Context) : AsyncTask<String, Unit, Unit>
                 .get()
 
             try {
-                var file = it.getDir("Images", Context.MODE_PRIVATE)
-                file = File(file, "img.jpg")
+                var file = File(it.filesDir, "Images")
+                if (!file.exists()) {
+                    file.mkdir()
+                }
+                file = File(file, url)
+
                 val out = FileOutputStream(file)
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 85, out)
                 out.flush()

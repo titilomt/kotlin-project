@@ -9,10 +9,9 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.Theme
 import com.bumptech.glide.Glide
 import com.example.curso01.exemplo.R
-import com.example.curso01.exemplo.model.CreateMemes
 import com.example.curso01.exemplo.model.Memes
+import com.example.curso01.exemplo.model.ResponseCreatedMemes
 import com.example.curso01.exemplo.service.RetrofitInitializer
-import com.example.curso01.exemplo.ui.fragments.ImageFragment
 import kotlinx.android.synthetic.main.activity_craft_meme.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,7 +31,9 @@ class CraftMemeActivity : AppCompatActivity() {
             var txt1 = craftTxt1.text.toString()
             var txt2 = craftTxt2.text.toString()
             if(txt1 != "" || txt2 != "") {
-                craftMeme(txt1, txt2, itemMeme.id)
+                var intent = Intent(this, ImageMemeActivity::class.java)
+
+                craftMeme(txt1, txt2, itemMeme.id, intent)
             } else {
                 MaterialDialog.Builder(this@CraftMemeActivity)
                     .theme(Theme.LIGHT)
@@ -44,13 +45,13 @@ class CraftMemeActivity : AppCompatActivity() {
         }
     }
 
-    private fun craftMeme(txt1: String, txt2: String, id: String) {
+    private fun craftMeme(txt1: String, txt2: String, id: String, intent: Intent) {
         var sm = RetrofitInitializer().serviceMemes()
 
         var call = sm.createMemes(id, "memesforfun3000", "furacao2000", txt1, txt2)
 
-        call.enqueue(object: Callback<CreateMemes>{
-            override fun onFailure(call: Call<CreateMemes>?, t: Throwable?) {
+        call.enqueue(object: Callback<ResponseCreatedMemes>{
+            override fun onFailure(call: Call<ResponseCreatedMemes>?, t: Throwable?) {
                 MaterialDialog.Builder(this@CraftMemeActivity)
                     .theme(Theme.LIGHT)
                     .title(R.string.craftactivity_ops)
@@ -60,22 +61,13 @@ class CraftMemeActivity : AppCompatActivity() {
                 Log.i("Err", t?.message)
             }
 
-            override fun onResponse(call: Call<CreateMemes>?, response: Response<CreateMemes>?) {
+            override fun onResponse(call: Call<ResponseCreatedMemes>?, response: Response<ResponseCreatedMemes>?) {
                 response.let {
                     if (it!!.code() == 200){
 
-                        val imageFragment = ImageFragment.newInstance(it.body().url)
+                        intent.putExtra("URL_CREATED", it.body().data.url)
 
-                        val manager = supportFragmentManager
-
-                        val transaction = manager.beginTransaction()
-
-                        transaction.replace(R.id.fragment_container, imageFragment)
-                        transaction.addToBackStack(null)
-
-                        transaction.commit()
-
-                        fragment_container
+                        startActivity(intent)
                     } else {
                         Toast.makeText(this@CraftMemeActivity, "Ahh foi quase...", Toast.LENGTH_LONG).show()
                     }

@@ -27,8 +27,8 @@ class RegisterActivity : AppCompatActivity() {
             var confirmPassword = crudConfirmPassword.text.toString()
 
             if(validateFields(name, email, password, confirmPassword)) {
-                if (password === confirmPassword) {
-                    signUp(name, email, password);
+                if (password == confirmPassword) {
+                    signUp(name, email, password)
                 } else {
                     MaterialDialog.Builder(this@RegisterActivity)
                         .theme(Theme.LIGHT)
@@ -51,9 +51,15 @@ class RegisterActivity : AppCompatActivity() {
     fun signUp(name: String, email: String, password: String){
         var sa = RetrofitInitializer().serviceAuth()
 
+        var account = Account()
+
+        account.name = name
+        account.email = email
+        account.password = password
+
         var intent = Intent(this, MainActivity::class.java)
 
-        var call = sa.register(name, email, password)
+        var call = sa.register(account)
 
         call.enqueue(object: Callback<Void>{
             override fun onFailure(call: Call<Void>?, t: Throwable?) {
@@ -78,7 +84,7 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-    private fun validateFields(email: String, name: String, password: String, confirmPassword: String): Boolean{
+    private fun validateFields(name: String, email: String, password: String, confirmPassword: String): Boolean{
 
         return (isEmailValid(email) && name != "" && password != "" && confirmPassword!= "")
     }

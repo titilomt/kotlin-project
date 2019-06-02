@@ -27,4 +27,7 @@
     <string name="craftactivity_ok">Okey</string>
     <string name="imgResponseBtnCancel">Cancelar</string>
     <string name="imgResponseBtnAccept">Salvar</string>
+    <string name="imageactivity_ok">Ok!</string>
+    <string name="imageactivity_success_message">Sucesso ao criar seu memes!</string>
+    <string name="imageactivity_success">Doge Miner</string>
 </resources>

@@ -19,7 +19,6 @@ class ListAdapter(var context: Context, var list: List<Memes>) : BaseAdapter() {
 
         var nameMeme = view.findViewById<TextView>(R.id.nameMeme)
         var imgMeme = view.findViewById<ImageView>(R.id.imgMeme)
-        var idMeme = list[position].id
 
         nameMeme.text = list[position].name
 
@@ -29,7 +28,7 @@ class ListAdapter(var context: Context, var list: List<Memes>) : BaseAdapter() {
     }
 
     override fun getItem(position: Int): Any {
-        return 0
+        return list[position]
     }
 
     override fun getItemId(position: Int): Long {

@@ -22,7 +22,13 @@ class ListActivity : AppCompatActivity() {
 
         getMemes()
 
+        var intent = Intent(this, CraftMemeActivity::class.java)
 
+        listMemes.setOnItemClickListener { _, _, i, _ ->
+            var memes = listMemes.getItemAtPosition(i) as Memes
+            intent.putExtra(EXTRA_MEME, memes)
+            startActivity(intent)
+        }
     }
 
     companion object {
@@ -33,8 +39,6 @@ class ListActivity : AppCompatActivity() {
         var sm = RetrofitInitializer().serviceMemes()
 
         var call = sm.getMemes()
-
-        var intent = Intent(this, CraftMemeActivity::class.java)
 
         call.enqueue(object: Callback<MainMemes> {
             override fun onFailure(call: Call<MainMemes>?, t: Throwable?) {
@@ -49,12 +53,6 @@ class ListActivity : AppCompatActivity() {
                             this@ListActivity,
                             it.body().dataMemes.listMemes
                         )
-
-                        listMemes.setOnItemClickListener { adapterView, view, i, l ->
-                            var memes = adapterView.getItemAtPosition(i) as Memes
-                            intent.putExtra(EXTRA_MEME, memes)
-                            startActivity(intent)
-                        }
 
                     } else {
                         Toast.makeText(this@ListActivity, "Tá pegando fogo bixo...", Toast.LENGTH_LONG).show()

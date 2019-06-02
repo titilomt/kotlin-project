@@ -1,5 +1,7 @@
 package com.example.curso01.exemplo.model
 
+import com.google.gson.annotations.SerializedName
+
 data class MainMemes (
-    var dataMemes: Data
+    @SerializedName("data") var dataMemes: Data
 )

@@ -14,8 +14,8 @@ class MemesApplication : Application {
     companion object {
 
         val PROD = true
-        val URL_API_DEV = "http://api.fluo.site/v1/"
-        val URL_API_PROD = "http://api.fluo.site/v1/"
+        val URL_API_DEV = "http://api.fluo.site"
+        val URL_API_PROD = "http://api.fluo.site"
         val URL_API = if(PROD) URL_API_PROD else URL_API_DEV
         val URL_MEMES_API = "https://api.imgflip.com/"
 

@@ -22,13 +22,18 @@ class MainActivity : AppCompatActivity() {
 
         buttonSubmit.setOnClickListener {
 
-            if (isEmailValid(inputLogin.text.toString()) && inputSenha.text.toString() !== "") {
+            if (isEmailValid(inputLogin.text.toString()) && inputSenha.text.toString() != "") {
 
                 login(inputLogin.text.toString(), inputSenha.text.toString())
 
             } else Toast.makeText(this, "Ops Daise, Favor preencher os campos em branco!", Toast.LENGTH_LONG).show()
         }
 
+        buttonRegister.setOnClickListener {
+            var intent = Intent(this, RegisterActivity::class.java)
+
+            startActivity(intent)
+        }
 
     }
 
@@ -43,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         account.email = email
         account.password = password
 
-        var call = sa.auth()
+        var call = sa.auth(account)
 
         var intent = Intent(this, ListActivity::class.java)
 

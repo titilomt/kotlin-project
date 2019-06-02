@@ -1,74 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient"
-        tools:context=".ui.activities.CraftMemeActivity">
+        tools:context=".ui.activities.CraftMemeActivity"
+        android:id="@+id/relativeLayout4">
 
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-        >
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/craftTxt1"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/robotolight"
-            />
-            <EditText
-                    android:id="@+id/craftTxt1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:maxLength="15"
-                    android:layout_marginBottom="10dp"
-            />
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/craftTxt2"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/robotolight"
-            />
-            <EditText
-                    android:id="@+id/craftTxt2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:maxLength="15"
-                    android:layout_marginBottom="10dp"
-            />
 
-            <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="450dp"
-                    android:layout_marginBottom="20dp"
-                    android:id="@+id/imgTemplate"
-            />
-            <Button
-                    android:background="@drawable/gradient_button"
-                    android:layout_width="match_parent"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/robotoregular"
-                    android:textColor="@color/colorBtnName"
-                    android:id="@+id/btnCraft"
-                    android:textAllCaps="false"
-                    android:text="@string/btnCraft"
-                    android:layout_height="wrap_content"
-            />
-        </LinearLayout>
-    <LinearLayout
-            android:id="@+id/fragment_container"
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/craftTxt1"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotolight"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@id/craftTxt1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+    <EditText
+            android:id="@+id/craftTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="15"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/craftTxt2"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotolight"
+            android:id="@+id/textView3" app:layout_constraintTop_toBottomOf="@+id/craftTxt1"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/craftTxt2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+    <EditText
+            android:id="@+id/craftTxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="15"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imgTemplate"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+
+    <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@drawable/gradient"
-    />
-</RelativeLayout>
+            android:id="@+id/imgTemplate"
+            app:layout_constraintTop_toBottomOf="@+id/craftTxt2"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnCraft"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+    <Button
+            android:background="@drawable/gradient_button"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/colorBtnName"
+            android:id="@+id/btnCraft"
+            android:textAllCaps="false"
+            android:text="@string/btnCraft"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/imgTemplate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+</android.support.constraint.ConstraintLayout>

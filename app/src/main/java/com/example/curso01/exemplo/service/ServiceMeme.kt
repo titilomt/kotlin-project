@@ -2,10 +2,9 @@ package com.example.curso01.exemplo.service
 
 import com.example.curso01.exemplo.model.CreateMemes
 import com.example.curso01.exemplo.model.MainMemes
+import com.example.curso01.exemplo.model.ResponseCreatedMemes
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ServiceMeme {
 
@@ -13,10 +12,12 @@ interface ServiceMeme {
     fun getMemes(): Call<MainMemes>
 
     @POST("caption_image")
-    fun createMemes(@Field("template_id") id: String,
-                    @Field("username") username: String,
-                    @Field("password") password: String,
-                    @Field("text0") txt1: String,
-                    @Field("text1") txt2: String): Call<CreateMemes>
+    fun createMemes(
+        @Query("template_id") id: String,
+        @Query("username") username: String,
+        @Query("password") password: String,
+        @Query("text0") txt0: String,
+        @Query("text1") txt1: String
+    ): Call<ResponseCreatedMemes>
 
 }
