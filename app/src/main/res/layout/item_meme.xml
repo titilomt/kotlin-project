@@ -2,31 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"
+              android:background="@drawable/gradient"
               android:layout_height="match_parent">
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/gradient_item"
+    >
         <ImageView
                 android:layout_margin="20dp"
-                android:id="@+id/imgTeam"
+                android:id="@+id/imgMeme"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
         />
 
         <TextView
-                android:layout_toRightOf="@+id/imgTeam"
+                android:layout_toRightOf="@+id/imgMeme"
                 android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="@font/robotomedium"
+                android:textColor="#FFF"
                 android:layout_height="wrap_content"
-                android:id="@+id/nameTeam"
-                android:layout_marginTop="20dp"/>
-
-        <TextView
-                android:layout_below="@+id/nameTeam"
-                android:layout_toRightOf="@+id/imgTeam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/nameState"
-                android:layout_marginTop="10dp"/>
+                android:id="@+id/nameMeme"
+                android:layout_centerInParent="true"
+        />
 
     </RelativeLayout>
 

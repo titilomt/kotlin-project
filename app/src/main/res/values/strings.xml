@@ -3,6 +3,28 @@
     <string name="app_name">Meme Master</string>
     <string name="labelSenha">Senha</string>
     <string name="labelLogin">Email</string>
+    <string name="listMemesTemplates">Memes</string>
     <string name="registerBtn">Cadastrar</string>
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="crudName">Nome</string>
+    <string name="crudEmail">Email</string>
+    <string name="crudPassword">Senha</string>
+    <string name="crudPasswordConfirm">Confirmar Senha</string>
+    <string name="mainactivity_ops">Ops</string>
+    <string name="mainactivity_user_pass_invalid">Usuário ou senha inválidos</string>
+    <string name="mainactivity_ok">Ok</string>
+    <string name="registeractivity_ops">Ops</string>
+    <string name="registeractivity_user_pass_invalid">Senhas não são iguais</string>
+    <string name="registeractivity_invalid_fields">Favor preecher todos os campos!</string>
+    <string name="registeractivity_email_invalid">Email já cadastrado!</string>
+    <string name="registeractivity_ok">Ok</string>
+    <string name="btnCrud">birl</string>
+    <string name="craftTxt1">Texto de cima</string>
+    <string name="craftTxt2">Texto de baixo</string>
+    <string name="btnCraft">Gerar Meme</string>
+    <string name="craftactivity_ops">Ops</string>
+    <string name="craftactivity_invalid_fields">Use um campo de texto para o meme!</string>
+    <string name="craftactivity_invalid_response">Não foi possivel criar o meme =(</string>
+    <string name="craftactivity_ok">Okey</string>
+    <string name="imgResponseBtnCancel">Cancelar</string>
+    <string name="imgResponseBtnAccept">Salvar</string>
 </resources>

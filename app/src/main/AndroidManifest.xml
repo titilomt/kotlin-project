@@ -3,6 +3,7 @@
           package="com.example.curso01.exemplo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
@@ -12,18 +13,19 @@
             android:screenOrientation="portrait"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ui.Activities.MainActivity">
+        <activity android:name=".ui.activities.CraftMemeActivity">
+        </activity>
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.Activities.ListActivity">
+        <activity android:name=".ui.activities.ListActivity">
         </activity>
         <activity
-                android:name=".ui.Activities.RegisterActivity"
-                android:label="@string/title_activity_register"
+                android:name=".ui.activities.RegisterActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

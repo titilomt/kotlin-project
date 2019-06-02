@@ -1,5 +1,6 @@
 package com.example.curso01.exemplo.service
 
+import com.example.curso01.exemplo.app.MemesApplication
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -22,13 +23,23 @@ class RetrofitInitializer {
 
     }
 
-    private val retrofit = Retrofit.Builder()
+    private val retrofitMemes = Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("http://api.fluo.site /")
+        .baseUrl(MemesApplication.URL_MEMES_API)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun serviceTeam(): ServiceTeam {
-        return retrofit.create(ServiceTeam::class.java)
+    private val retrofitAuth = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl(MemesApplication.URL_API)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    fun serviceAuth(): ServiceAuth {
+        return retrofitAuth.create(ServiceAuth::class.java)
+    }
+
+    fun serviceMemes(): ServiceMeme {
+        return retrofitMemes.create(ServiceMeme::class.java)
     }
 }
